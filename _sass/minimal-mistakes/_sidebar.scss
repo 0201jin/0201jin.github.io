@@ -19,7 +19,7 @@
   @include breakpoint($large) {
     float: left;
     width: calc(#{$right-sidebar-width-narrow} - 1em);
-    opacity: 0.75; //프로필 밝기 조절
+    opacity: 0.9; //프로필 밝기 조절
     -webkit-transition: opacity 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out;
 
@@ -308,7 +308,7 @@
     padding-top: 1px;
     padding-bottom: 1px;
     color: inherit;
-    font-size: $type-size-6;
+    font-size: 14px;
     text-decoration: none;
 
     &:hover {

@@ -250,27 +250,27 @@ body {
    ========================================================================== */
 
 .page__share {
-  margin-top: 2em;
-  padding-top: 1em;
+  margin-top: 1px;
+  padding-top: 1px;
   border-top: 1px solid $border-color;
 
   @include breakpoint(max-width $small) {
     .btn span {
       border: 0;
       clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
+      height: 0px;
+      margin: 0px;
       overflow: hidden;
-      padding: 0;
+      padding: 0px;
       position: absolute;
-      width: 1px;
+      width: 0px;
     }
   }
 }
 
 .page__share-title {
-  margin-bottom: 10px;
-  font-size: $type-size-6;
+  margin-bottom: 5px;
+  font-size: 12px;
   text-transform: uppercase;
 }
 
@@ -279,10 +279,10 @@ body {
    ========================================================================== */
 
 .page__meta {
-  margin-top: 2em;
+  margin-top: 0px;
   color: $muted-text-color;
   font-family: $sans-serif;
-  font-size: $type-size-6;
+  font-size: 13px;
 
   p {
     margin: 0;
@@ -294,8 +294,8 @@ body {
 }
 
 .page__meta-title {
-  margin-bottom: 10px;
-  font-size: $type-size-6;
+  margin-bottom: 0px;
+  font-size: 16px;
   text-transform: uppercase;
 }
 
@@ -322,8 +322,8 @@ body {
 .page__taxonomy-item {
   display: inline-block;
   margin-right: 5px;
-  margin-bottom: 8px;
-  padding: 5px 10px;
+  margin-bottom: 0px;
+  padding: 0px 0px;
   text-decoration: none;
   border: 1px solid mix(#000, $border-color, 25%);
   border-radius: $border-radius;
@@ -343,7 +343,7 @@ body {
   }
 
   .archive__item-title {
-    margin-top: 0;
+    margin-top: 0px;
   }
 
   .archive__subtitle {
@@ -507,8 +507,8 @@ body {
 .page__related {
   @include clearfix();
   float: left;
-  margin-top: 2em;
-  padding-top: 1em;
+  margin-top: 0px;
+  padding-top: 0px;
   border-top: 1px solid $border-color;
 
   @include breakpoint($large) {
