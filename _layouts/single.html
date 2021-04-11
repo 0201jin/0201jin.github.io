@@ -35,7 +35,15 @@ layout: default
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %}
-        {% include page__taxonomy.html %}
+
+        {% if site.category_archive.type and page.categories[0] %}
+          {% include category-list.html %}
+        {% endif %}
+        
+        {% if site.tag_archive.type and page.tags[0] %}
+          {% include tag-list.html %}
+        {% endif %}
+
       </footer>
 
       <section class="page__content" itemprop="text">

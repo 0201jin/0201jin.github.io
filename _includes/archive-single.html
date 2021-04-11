@@ -21,16 +21,28 @@
       <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ post.date | date: "%Y-%m-%d" }}</p>
     {% endif %}
 
-    {% include page__meta.html type=include.type %}
     {% if post.link %}
       <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
     {% else %}
       <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
     {% endif %}
 
-    {% if post.tags %}
-      <p class="page__taxonomy"><i class="" aria-hidden="true"></i> {{ post.tags }}</p>
+    <!--카테고리 수집-->
+    {% if site.category_archive.path %}
+    {% assign categories_sorted = post.categories | sort_natural %}
+    {% assign tags_sorted = post.tags | sort_natural %}
+
+    <p class="post__taxonomy">
+      <span itemprop="keywords">
+      {% for category_word in categories_sorted %}
+        <a href="{{ category_word | slugify | prepend: path_type | prepend: site.category_archive.path | relative_url }}" class="post__taxonomy-item" rel="tag">{{ category_word }}</a><span> </span>
+      {% endfor %}
+      {% for tag_word in tags_sorted %}
+        <a href="{{ tag_word | slugify | prepend: path_type | prepend: site.tag_archive.path | relative_url }}" class="post__taxonomy-item" rel="tag">{{ tag_word }}</a><span> </span>
+      {% endfor %}
+      </span>
+    </p>
     {% endif %}
-    <!--{% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}-->
+
   </article>
 </div>
